@@ -8,8 +8,8 @@ import TransactionsNew from "./Components/TransactionsNew"
 function App() {
   return (
     <div className="App">
-     <Route exact path="/" component={Home} />
      <Route path="/" component={NavBar} />
+     <Route exact path="/" component={Home} />
       <Switch>
      <Route path="/transactions/new" component={TransactionsNew} />
      <Route path="/transactions" component={Transactions} />

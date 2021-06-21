@@ -1,20 +1,35 @@
 import React from "react";
 import axios from "axios";
+import { useState, useEffect } from "react"
 import "./Transactions.css"
 
-class Transactions extends React.Component {
-  state = { transactions: [] };
+import { apiURL } from "../util/apiURL"
+const API = apiURL()
 
-  async componentDidMount() {
-    const env = process.env.NODE_ENV;
-    const url = env === "production" ? "" : "http://localhost:8888";
-    const res = await axios.get(`${url}/transactions`);
-    // debugger;
-    this.setState({ transactions: res.data });
+function Transactions () {
+  const [transactions, setTransactions] = useState([])
+ 
+  const fetchTransaction = async () => {
+    try {
+      const res = await axios.get(`${API}/transactions`);
+      setTransactions(res.data)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
-  render() {
-    const { transactions } = this.state;
+  useEffect (() => {
+    fetchTransaction()
+  }, [])
+
+  // async componentDidMount() {
+    // const env = process.env.NODE_ENV;
+    // const url = env === "production" ? "http://anjus-budget-app.netlify.app" : "http://localhost:8888";
+    // const res = await axios.get(`${url}/transactions`);
+    // debugger;
+    // this.setState({ transactions: res.data });
+  // }
+  
     return (
       <section className="TransactionsSection">
         <h1 className="TransactionsHeader">Bank Account Total:</h1>
@@ -26,6 +41,6 @@ class Transactions extends React.Component {
       </section>
     );
   }
-}
+
 
 export default Transactions;
