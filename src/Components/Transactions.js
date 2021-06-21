@@ -22,14 +22,8 @@ function Transactions () {
     fetchTransaction()
   }, [])
 
-  // async componentDidMount() {
-    // const env = process.env.NODE_ENV;
-    // const url = env === "production" ? "http://anjus-budget-app.netlify.app" : "http://localhost:8888";
-    // const res = await axios.get(`${url}/transactions`);
-    // debugger;
-    // this.setState({ transactions: res.data });
-  // }
   
+
     return (
       <section className="TransactionsSection">
         <h1 className="TransactionsHeader">Bank Account Total:</h1>
