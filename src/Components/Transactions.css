@@ -1,0 +1,12 @@
+.TransactionsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+    margin: auto;
+    height: 100%;
+    font-size: 21px;
+    padding: 15px;
+}
+
+

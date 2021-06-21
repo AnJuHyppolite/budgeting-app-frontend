@@ -1,0 +1,6 @@
+.NavBarContainer {
+    background-color: aquamarine;
+    display: flex;
+    font-size: 21px;
+    justify-content: space-around;
+}

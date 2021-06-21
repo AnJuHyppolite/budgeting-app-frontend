@@ -1,0 +1,23 @@
+.TransactionsForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.TransactionsForm > label {
+  width: 12%;
+  height: 21px;
+  font-weight: bold;
+}
+
+.TransactionsForm > input {
+  width: 12%;
+  height: 21px;
+  margin-bottom: 20px;
+}
+
+.TransactionsForm > button {
+  width: 12%;
+  height: 100%;
+  justify-content: center;
+}
