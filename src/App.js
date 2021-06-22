@@ -1,19 +1,65 @@
-import './App.css';
-import { Route, Switch } from "react-router-dom"
-import Home from "./Components/Home"
-import NavBar from "./Components/NavBar"
-import Transactions from "./Components/Transactions"
-import TransactionsNew from "./Components/TransactionsNew"
+// DEPENDENCIES
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { useState, useEffect} from "react";
+
+// COMPONENTS
+import NavBar from "./Components/NavBar";
+
+//PAGES
+// import './App.css';
+import Home from "./Pages/Home";
+import Index from "./Pages/Index";
+import TransactionNew from "./Pages/TransactionNew";
+// import Transactions from "./Components/Transactions";
+import axios from "axios";
+
+import { apiURL } from "./util/apiURL";
+const API = apiURL();
 
 function App() {
+  const [transactions, setTransactions] = useState([]);
+ 
+  const fetchTransaction = async () => {
+    try {
+      const res = await axios.get(`${API}/transactions`);
+      setTransactions(res.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect (() => {
+    fetchTransaction()
+  }, [])
+
+  const addTransaction = async (newTransaction) => {
+    try {
+      const res = await axios.post(`${API}/transactions`, newTransaction);
+      setTransactions((prevTransactions) => [...prevTransactions, res.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="App">
-     <Route path="/" component={NavBar} />
-     <Route exact path="/" component={Home} />
-      <Switch>
-     <Route path="/transactions/new" component={TransactionsNew} />
-     <Route path="/transactions" component={Transactions} />
-     </Switch>
+      <BrowserRouter>
+        <NavBar />
+        <main>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/transactions">
+              <Index transactions={transactions} />
+            </Route>
+            <Route path="/transactions/new">
+              <TransactionNew transactions={transactions} addTransaction={addTransaction} />
+            </Route>
+            {/* <Route path="/transactions" component={Transactions} /> */}
+          </Switch>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }
