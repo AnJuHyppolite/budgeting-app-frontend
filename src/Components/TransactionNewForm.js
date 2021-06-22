@@ -17,8 +17,8 @@ const TransactionNewForm = ({ addTransaction, history }) => {
   };
 
  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setTransaction({ [name]: value });
+    const { id, value } = e.target;
+    setTransaction({ ...transaction, [id]: value });
   };
 
   return (
