@@ -1,10 +1,10 @@
 import TransactionNewForm from "../Components/TransactionNewForm"
 
-const TransactionNew = ({ addTransaction }) => {
+const TransactionNew = ({ addTransaction, history }) => {
   return (
     <div className="TransactionNew">
       <h2>New</h2>
-      <TransactionNewForm addTransaction={addTransaction} />
+      <TransactionNewForm history={history} addTransaction={addTransaction} />
     </div>
   );
 }

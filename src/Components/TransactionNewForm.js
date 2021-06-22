@@ -2,7 +2,7 @@ import { useState } from "react";
 import { withRouter } from "react-router-dom";
 import "./TransactionNewForm.css";
 
-const TransactionsNewForm = ({ addTransaction, history }) => {
+const TransactionNewForm = ({ addTransaction, history }) => {
   const [transaction, setTransaction] = useState({
     date: "",
     itemName: "",
@@ -22,6 +22,7 @@ const TransactionsNewForm = ({ addTransaction, history }) => {
   };
 
   return (
+    <div>
     <form className="TransactionsForm" onSubmit={handleSubmit}>
       <h1 className="TransactionsHeader">Add a New Item</h1>
       <label htmlFor="date">Date</label>
@@ -32,12 +33,12 @@ const TransactionsNewForm = ({ addTransaction, history }) => {
         value={transaction.date}
         placeholder="Date"
       />
-      <label htmlFor="itemName">Item</label>
+      <label htmlFor="name">Name</label>
       <input
         onChange={handleChange}
-        id="itemName"
-        name="itemName"
-        value={transaction.itemName}
+        id="name"
+        name="name"
+        value={transaction.name}
         placeholder="Name"
       />
       <label htmlFor="amount">Amount</label>
@@ -59,7 +60,8 @@ const TransactionsNewForm = ({ addTransaction, history }) => {
       />
       <button>Create New Item</button>
     </form>
+    </div>
   );
 };
 
-export default withRouter(TransactionsNewForm);
+export default withRouter(TransactionNewForm);

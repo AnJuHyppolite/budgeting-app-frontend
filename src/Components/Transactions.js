@@ -23,7 +23,7 @@ const Transactions = ({transactions}) => {
         <h1 className="TransactionsHeader">Bank Account Total:</h1>
         <ul className="TransactionsUL">
          {transactions.map((transaction, index) => {
-             return <li className="TransactionsLI">{transaction.date} <Link to={`/transactions/${index}`}>{transaction.name}</Link> {transaction.amount}</li>
+             return <li className="TransactionsLI" key={index}>{transaction.date} <Link to={`/transactions/${index}`}>{transaction.name}</Link> {transaction.amount}</li>
          })}
         </ul>
       </section>

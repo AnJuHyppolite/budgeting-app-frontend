@@ -1,6 +1,7 @@
 // DEPENDENCIES
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useState, useEffect} from "react";
+import axios from "axios";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
@@ -10,8 +11,6 @@ import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import TransactionNew from "./Pages/TransactionNew";
-// import Transactions from "./Components/Transactions";
-import axios from "axios";
 
 import { apiURL } from "./util/apiURL";
 const API = apiURL();
@@ -50,11 +49,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route path="/transactions/new">
+              <TransactionNew addTransaction={addTransaction} />
+            </Route>
             <Route path="/transactions">
               <Index transactions={transactions} />
-            </Route>
-            <Route path="/transactions/new">
-              <TransactionNew transactions={transactions} addTransaction={addTransaction} />
             </Route>
             {/* <Route path="/transactions" component={Transactions} /> */}
           </Switch>
