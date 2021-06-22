@@ -12,6 +12,7 @@ import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import TransactionNew from "./Pages/TransactionNew";
 import TransactionEdit from "./Pages/TransactionEdit";
+import TransactionShow from "./Pages/TransactionShow";
 
 
 import { apiURL } from "./util/apiURL";
@@ -68,6 +69,7 @@ function App() {
             <Route path="/transactions">
               <Index transactions={transactions} />
             </Route>
+            <Route exact path="/transactions/:index"><TransactionShow /></Route>
             <Route path="/transactions/:index/edit">
               <TransactionEdit updateTransaction={updateTransaction} />
             </Route>

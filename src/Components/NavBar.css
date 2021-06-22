@@ -1,6 +1,17 @@
 .NavBarContainer {
+  background-color: aquamarine;
+  display: flex;
+  font-size: 21px;
+  justify-content: space-around;
+}
+
+.BudgetAppLink {
+  text-decoration: none;
+}
+
+.TransactionButton {
+    height: 80px;
+    margin: 10px;
     background-color: aquamarine;
-    display: flex;
-    font-size: 21px;
-    justify-content: space-around;
+    border-radius: 10px;
 }
