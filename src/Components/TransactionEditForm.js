@@ -34,8 +34,8 @@ const TransactionEditForm = (props) => {
     fetchTransaction();
   }, []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const { updateTransaction } = props
     await updateTransaction(transaction, index);
     history.push(`/transactions/${index}`);

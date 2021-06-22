@@ -45,7 +45,7 @@ function App() {
 
   const updateTransaction = async (updatedTransaction, index) => {
     try {
-      await axios.put(`${API}/Transaction/${index}`, updatedTransaction);
+      await axios.put(`${API}/transactions/${index}`, updatedTransaction);
       const newTransactions = [...transactions];
       newTransactions[index] = updatedTransaction;
       setTransactions(newTransactions);
@@ -53,6 +53,17 @@ function App() {
       console.log(error);
     }
   };
+
+  const deleteTransaction = async (index) => {
+    try {
+      await axios.delete(`${API}/transactions/${index}`)
+      const oldTransactions = [...transactions]
+      oldTransactions.splice(index, 1)
+      setTransactions(oldTransactions)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className="App">
@@ -66,10 +77,10 @@ function App() {
             <Route path="/transactions/new">
               <TransactionNew addTransaction={addTransaction} />
             </Route>
-            <Route path="/transactions">
+            <Route exact path="/transactions">
               <Index transactions={transactions} />
             </Route>
-            <Route exact path="/transactions/:index"><TransactionShow /></Route>
+            <Route exact path="/transactions/:index"><TransactionShow deleteTransaction={deleteTransaction}/></Route>
             <Route path="/transactions/:index/edit">
               <TransactionEdit updateTransaction={updateTransaction} />
             </Route>
