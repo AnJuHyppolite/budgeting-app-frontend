@@ -32,7 +32,7 @@ const TransactionEditForm = (props) => {
 
   useEffect(() => {
     fetchTransaction();
-  }, []);
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();

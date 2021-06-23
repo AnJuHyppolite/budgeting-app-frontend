@@ -22,7 +22,7 @@ const TransactionDetails = ({ deleteTransaction }) => {
 
   useEffect(() => {
     fetchTransaction();
-  }, []);
+  });
 
   const handleDelete = () => {
     deleteTransaction(index);
