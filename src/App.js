@@ -14,7 +14,6 @@ import TransactionNew from "./Pages/TransactionNew";
 import TransactionEdit from "./Pages/TransactionEdit";
 import TransactionShow from "./Pages/TransactionShow";
 
-
 import { apiURL } from "./util/apiURL";
 const API = apiURL();
 
@@ -56,14 +55,14 @@ function App() {
 
   const deleteTransaction = async (index) => {
     try {
-      await axios.delete(`${API}/transactions/${index}`)
-      const oldTransactions = [...transactions]
-      oldTransactions.splice(index, 1)
-      setTransactions(oldTransactions)
+      await axios.delete(`${API}/transactions/${index}`);
+      const oldTransactions = [...transactions];
+      oldTransactions.splice(index, 1);
+      setTransactions(oldTransactions);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <div className="App">
@@ -80,7 +79,9 @@ function App() {
             <Route exact path="/transactions">
               <Index transactions={transactions} />
             </Route>
-            <Route exact path="/transactions/:index"><TransactionShow deleteTransaction={deleteTransaction}/></Route>
+            <Route exact path="/transactions/:index">
+              <TransactionShow deleteTransaction={deleteTransaction} />
+            </Route>
             <Route path="/transactions/:index/edit">
               <TransactionEdit updateTransaction={updateTransaction} />
             </Route>
