@@ -1,17 +1,23 @@
 import { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./TransactionNewForm.css";
 
 const TransactionNewForm = ({ addTransaction, history }) => {
   const [transaction, setTransaction] = useState({
     date: "",
-    itemName: "",
-    amount: "",
+    name: "",
+    amount: 0,
     from: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { date, name, amount, from } = useState
+    if (!date || !name || !from) {
+      alert("Input is not valid. Please complete all the fields.")
+    } else if (amount !== "number") {
+      alert("The amount is not valid.")
+    }
     addTransaction(transaction)
     history.push("/transactions")
   };
@@ -19,6 +25,7 @@ const TransactionNewForm = ({ addTransaction, history }) => {
  const handleChange = (e) => {
     const { id, value } = e.target;
     setTransaction({ ...transaction, [id]: value });
+    console.log(value)
   };
 
   return (
@@ -59,6 +66,7 @@ const TransactionNewForm = ({ addTransaction, history }) => {
         placeholder="From"
       />
       <button>Create New Item</button>
+      <Link to={`/transactions`}><button>Go Back</button></Link>
     </form>
     </div>
   );

@@ -13,7 +13,6 @@ const TransactionDetails = ({ deleteTransaction }) => {
   const fetchTransaction = async () => {
     try {
       const res = await axios.get(`${API}/transactions/${index}`);
-      // debugger;
       setTransaction(res.data);
     } catch (error) {
       console.log(error);
@@ -31,11 +30,11 @@ const TransactionDetails = ({ deleteTransaction }) => {
 
   return (
     <div>
-      <h2>Gimme the Deets</h2>
-      <p>{transaction.from}</p>
-      <p>{transaction.name}</p>
-      <p>{transaction.date}</p>
-      <p>{transaction.amount}</p>
+      <h2>Giving You the Deets</h2>
+      <p>From: {transaction.from}</p>
+      <p>Name: {transaction.name}</p>
+      <p>Date: {transaction.date}</p>
+      <p>Amount: ${transaction.amount}</p>
       <button onClick={handleDelete}>Delete</button>
     </div>
   );

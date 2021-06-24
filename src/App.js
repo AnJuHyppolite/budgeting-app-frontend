@@ -64,6 +64,14 @@ function App() {
     }
   };
 
+  const calculateSum = () => {
+    let sum = 0;
+    transactions.forEach((transaction) => {
+      sum += Number(transaction.amount);
+    })
+    return sum
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -77,7 +85,7 @@ function App() {
               <TransactionNew addTransaction={addTransaction} />
             </Route>
             <Route exact path="/transactions">
-              <Index transactions={transactions} />
+              <Index transactions={transactions} sum={calculateSum()} />
             </Route>
             <Route exact path="/transactions/:index">
               <TransactionShow deleteTransaction={deleteTransaction} />

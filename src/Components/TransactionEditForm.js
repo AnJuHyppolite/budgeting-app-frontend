@@ -12,7 +12,7 @@ const TransactionEditForm = (props) => {
   const [transaction, setTransaction] = useState({
     date: "",
     itemName: "",
-    amount: "",
+    amount: 0,
     from: "",
   });
 
@@ -79,6 +79,7 @@ const TransactionEditForm = (props) => {
         placeholder="From"
       />
       <button>Create New Item</button>
+      <button></button>
     </form>
     </div>
   );
