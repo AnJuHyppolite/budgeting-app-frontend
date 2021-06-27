@@ -12,12 +12,6 @@ const TransactionNewForm = ({ addTransaction, history }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { date, name, amount, from } = useState
-    if (!date || !name || !from) {
-      alert("Input is not valid. Please complete all the fields.")
-    } else if (amount !== "number") {
-      alert("The amount is not valid.")
-    }
     addTransaction(transaction)
     history.push("/transactions")
   };
@@ -39,6 +33,7 @@ const TransactionNewForm = ({ addTransaction, history }) => {
         name="date"
         value={transaction.date}
         placeholder="Date"
+        required
       />
       <label htmlFor="name">Name</label>
       <input
@@ -47,6 +42,7 @@ const TransactionNewForm = ({ addTransaction, history }) => {
         name="name"
         value={transaction.name}
         placeholder="Name"
+        required
       />
       <label htmlFor="amount">Amount</label>
       <input
@@ -56,6 +52,7 @@ const TransactionNewForm = ({ addTransaction, history }) => {
         name="amount"
         value={transaction.amount}
         placeholder="Amount"
+        required
       />
       <label htmlFor="from">From</label>
       <input
@@ -64,9 +61,10 @@ const TransactionNewForm = ({ addTransaction, history }) => {
         name="from"
         value={transaction.from}
         placeholder="From"
+        required
       />
-      <button>Create New Item</button>
-      <Link to={`/transactions`}><button>Go Back</button></Link>
+      <button id="CreateNewButton">Create New Item</button>
+      <Link id="GoBackButton" to={`/transactions`}><button>Go Back</button></Link>
     </form>
     </div>
   );

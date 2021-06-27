@@ -4,15 +4,10 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <nav className="NavBarContainer">
-      <h1 className="BudgetAppLink">
-        <NavLink to="/">Budget App</NavLink>
-      </h1>
-      <h1 className="TransactionsLink">
-        <NavLink to="/transactions">Transactions</NavLink>
-      </h1>
+      <NavLink to="/">Budget App</NavLink>
+      <NavLink to="/transactions">Transactions</NavLink>
       <button className="TransactionButton">
-          <h1>
-        <NavLink to="/transactions/new">New Transaction</NavLink></h1>
+        <NavLink to="/transactions/new">New Transaction</NavLink>
       </button>
     </nav>
   );

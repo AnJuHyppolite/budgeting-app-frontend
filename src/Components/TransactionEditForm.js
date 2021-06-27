@@ -78,8 +78,8 @@ const TransactionEditForm = (props) => {
         value={transaction.from}
         placeholder="From"
       />
-      <button>Create New Item</button>
-      <button></button>
+      {/* <button>Create New Item</button>
+      <button></button> */}
     </form>
     </div>
   );

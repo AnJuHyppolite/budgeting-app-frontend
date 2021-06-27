@@ -1,25 +1,35 @@
 .NavBarContainer {
-  background-color: aquamarine;
+  background-color: gold;
   display: flex;
   font-size: 21px;
   justify-content: space-around;
+  margin: 0;
 }
 
-.BudgetAppLink {
+.NavBarContainer > a {
   text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 25px;
+  /* border: 5px solid black; */
+}
+button > a {
+  text-decoration: none;
+}
+
+a {
+  color: black;
 }
 
 .TransactionButton {
   height: 60px;
   margin: 20px;
-  /* padding-bottom: 10px; */
-  /* padding-bottom: 45px; */
-  background-color: aquamarine;
-  border-radius: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 16px;
-  /* display: inline-block; */
-  /* text-align: center;
-  vertical-align: middle; */
-  padding: 8px 3px 5px 8px;
+  background-color: gold;
+  border-radius: 40px;
+  border: 2px solid black;
+  box-shadow: 2px 4px rgba(54, 53, 53, 0.7);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 21px;
+  padding: 12px 15px 15px 15px;
 }

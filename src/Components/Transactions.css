@@ -1,12 +1,47 @@
-.TransactionsSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 35%;
-    margin: auto;
-    height: 100%;
-    font-size: 21px;
-    padding: 15px;
+/* .TransactionsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  font-size: 21px;
+  padding: 15px;
+} */
+
+.TransactionsHeader {
+  text-align: center;
 }
 
+/* .TransactionsUL {
+    margin: auto;
+} */
 
+.BankTransactionsTable {
+  border-collapse: collapse;
+  width: 55vw;
+}
+
+.BankTransactionsTable td,
+.BankTransactionsTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.BankTransactionsTable tr:hover {
+  background-color: #ddd;
+}
+
+.BankTransactionsTable th {
+  text-align: center;
+  background-color: gold;
+  color: black;
+}
+
+.BankTransactionsTable {
+    margin: auto;
+}
+
+td > a:visited {
+  color: green;
+}
