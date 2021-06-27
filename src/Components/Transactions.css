@@ -1,21 +1,6 @@
-/* .TransactionsSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: 50%;
-  margin: auto;
-  font-size: 21px;
-  padding: 15px;
-} */
-
 .TransactionsHeader {
   text-align: center;
 }
-
-/* .TransactionsUL {
-    margin: auto;
-} */
 
 .BankTransactionsTable {
   border-collapse: collapse;
