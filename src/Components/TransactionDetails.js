@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useHistory, withRouter, Link } from "react-router-dom";
+import "./TransactionDetails.css"
 
 import { apiURL } from "../util/apiURL";
 const API = apiURL();
@@ -34,8 +35,9 @@ const TransactionDetails = ({ deleteTransaction }) => {
       <p>Name: {transaction.name}</p>
       <p>Date: {transaction.date}</p>
       <p>Amount: ${transaction.amount}</p>
-      <button onClick={handleDelete}>Delete</button>
-      <Link id="GoBackButton" to={`/transactions`}><button>Go Back</button></Link>
+      <button id="DeleteButton" onClick={handleDelete}>Delete</button>
+      {/* <Link id="GoBackDeetsButton" to={`/transactions`}>Go Back</Link> */}
+      <Link id="GoBackDeetsButton" to={`/transactions`}><button className="GoBack">Go Back</button></Link>
     </div>
   );
 };

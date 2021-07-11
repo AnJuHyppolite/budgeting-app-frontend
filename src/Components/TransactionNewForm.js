@@ -64,7 +64,7 @@ const TransactionNewForm = ({ addTransaction, history }) => {
         required
       />
       <button id="CreateNewButton">Create New Item</button>
-      <Link id="GoBackButton" to={`/transactions`}><button>Go Back</button></Link>
+      <Link id="GoBackNewForm" to={`/transactions`}><button>Go Back</button></Link>
     </form>
     </div>
   );

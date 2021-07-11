@@ -43,7 +43,7 @@
   font-size: 18px;
 }
 
-#GoBackButton {
+#GoBackNewForm {
   width: 12%;
   height: 50%;
   background-color: gold;
@@ -54,12 +54,13 @@
   font-weight: bold;
   font-size: 18px;
   text-align: center;
-}
+} 
 
-#GoBackButton > button {
+#GoBackNewForm > button {
   font-family: "Times New Roman", Times, serif;
   font-size: 18px;
   font-weight: bold;
   background-color: gold;
   border: 0;
 }
+

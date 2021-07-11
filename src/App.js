@@ -76,7 +76,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        <main>
           <Switch>
             <Route exact path="/">
               <Home />
@@ -94,7 +93,6 @@ function App() {
               <TransactionEdit updateTransaction={updateTransaction} />
             </Route>
           </Switch>
-        </main>
       </BrowserRouter>
     </div>
   );
