@@ -5,6 +5,7 @@
 .BankTransactionsTable {
   border-collapse: collapse;
   width: 55vw;
+  margin: auto;
 }
 
 .BankTransactionsTable td,
@@ -21,10 +22,6 @@
   text-align: center;
   background-color: gold;
   color: black;
-}
-
-.BankTransactionsTable {
-    margin: auto;
 }
 
 td > a:visited {
